@@ -34,14 +34,14 @@ class PokemonDetailEntity {
     "Stellar": Colors.amber.shade600,
   };
 
-  static const MAX_HP = 300;
-  static const MAX_ATTACK = 200;
-  static const MAX_DEFENSE = 200;
-  static const MAX_SPEED = 200;
-  static const MAX_EXP = 10000;
+  static const maxHp = 300;
+  static const maxAttack = 200;
+  static const maxDefense = 200;
+  static const maxSpeed = 200;
+  static const maxExp = 10000;
 
   final random = Random();
-  int get exp => random.nextInt(MAX_EXP);
+  int get exp => random.nextInt(maxExp);
 
   PokemonDetailEntity({
     required this.baseExperience,
@@ -64,11 +64,11 @@ class PokemonDetailEntity {
   String getHeightString() => '${(height / 10).toStringAsFixed(1)} M';
   String getWeightString() => '${(weight / 10).toStringAsFixed(1)} kG';
 
-  String getHpString() => "$hp/$MAX_HP";
-  String getAttackString() => "$attack/$MAX_ATTACK";
-  String getDefenseString() => "$defense/$MAX_DEFENSE";
-  String getSpeedString() => "$speed/$MAX_SPEED";
-  String getExpString() => "$exp/$MAX_EXP";
+  String getHpString() => "$hp/$maxHp";
+  String getAttackString() => "$attack/$maxAttack";
+  String getDefenseString() => "$defense/$maxDefense";
+  String getSpeedString() => "$speed/$maxSpeed";
+  String getExpString() => "$exp/$maxExp";
 
   String nameCapitalized() {
     if (name.isEmpty) return name;

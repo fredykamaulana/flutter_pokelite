@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_pokelite/core/state/remote_state.dart';
+import 'package:flutter_pokelite/core/state/ui_state.dart';
 import 'package:flutter_pokelite/features/pokemon_list/domain/entities/pokemon_entity.dart';
 import 'package:flutter_pokelite/features/pokemon_list/presentation/bloc/pokemon_list_bloc.dart';
 import 'package:flutter_pokelite/features/pokemon_list/presentation/bloc/pokemon_list_event.dart';
@@ -103,19 +103,15 @@ class _PokemonListScreenState extends State<PokemonListScreen> {
                 SliverToBoxAdapter(child: const SizedBox(height: 16)),
                 SliverToBoxAdapter(
                   child:
-                      BlocSelector<
-                        PokemonListBloc,
-                        PokemonListState,
-                        RemoteState
-                      >(
+                      BlocSelector<PokemonListBloc, PokemonListState, UiState>(
                         selector: (state) => state.state!,
                         builder: (context, state) {
                           dev.log('Current state: $state');
                           return switch (state) {
-                            RemoteStateLoading() => const Center(
+                            UiStateLoading() => const Center(
                               child: CircularProgressIndicator(),
                             ),
-                            RemoteStateError(error: var error) => Center(
+                            UiStateError(error: var error) => Center(
                               child: Text("Error loading movies: $error"),
                             ),
                             _ => const SizedBox.shrink(),
