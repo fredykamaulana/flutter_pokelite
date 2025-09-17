@@ -5,7 +5,6 @@ import 'package:flutter_pokelite/features/pokemon_detail/presentation/bloc/pokem
 import 'package:flutter_pokelite/features/pokemon_detail/presentation/bloc/pokemon_detail_event.dart';
 import 'package:flutter_pokelite/features/pokemon_detail/presentation/bloc/pokemon_detail_state.dart';
 import 'package:flutter_pokelite/features/pokemon_detail/presentation/screens/pokemon_detail_content.dart';
-import 'package:go_router/go_router.dart';
 
 class PokemonDetailScreen extends StatefulWidget {
   final int pokemonId;
